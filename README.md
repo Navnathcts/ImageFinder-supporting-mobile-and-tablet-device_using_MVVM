@@ -1,7 +1,7 @@
 # ImageFinder-using-MVVM-supporting-mobile-and-tablet-device
-#App provide support for mobile and tablet devices.
+# App provide support for mobile and tablet devices.
 
-#Libraries used
+# Libraries used
 
 1. Retrofit - Used for making api calls.
 2. Piccaso - Used to laod th images.
