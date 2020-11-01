@@ -33,7 +33,7 @@ class ImageDetailFragment : Fragment() {
         imgItem.showView()
         imgItem?.apply {
             showView()
-            loadImage(context= requireActivity(),link =  imageItem?.link, errorResId = R.drawable.ic_launcher_background, placeHolderRes = R.drawable.ic_launcher_background)
+            loadImage(context= requireActivity(),link =  imageItem?.link, errorResId = R.drawable.ic_error, placeHolderRes = R.drawable.ic_launcher_background, pbImageLoader = pbImageLoader)
         }
     }
 }

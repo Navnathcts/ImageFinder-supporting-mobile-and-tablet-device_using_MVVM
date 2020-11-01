@@ -28,8 +28,9 @@ class ImagesListAdapter(
                 imgSearcheItem.loadImage(
                     context = context,
                     link = link,
-                    errorResId = R.drawable.ic_launcher_background,
-                    placeHolderRes = R.drawable.ic_launcher_background
+                    errorResId = R.drawable.ic_error,
+                    placeHolderRes = R.drawable.ic_launcher_background,
+                    pbImageLoader = pbImageLoader
                 )
                 setOnClickListener {
                     listener.showLargeImage(this)

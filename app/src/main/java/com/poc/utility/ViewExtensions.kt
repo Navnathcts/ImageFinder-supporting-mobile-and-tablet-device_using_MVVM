@@ -5,8 +5,10 @@ import android.text.TextWatcher
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
+import android.widget.ProgressBar
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.core.widget.doOnTextChanged
+import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.channels.awaitClose
@@ -20,11 +22,19 @@ fun View.hideView() {
     this.visibility = View.GONE
 }
 
-fun ImageView.loadImage(context: Context, link: String?, placeHolderRes: Int, errorResId: Int) {
+fun ImageView.loadImage(context: Context, link: String?, placeHolderRes: Int, errorResId: Int, pbImageLoader:ProgressBar?=null) {
     Picasso.with(context).load(link).fit().centerCrop()
         .placeholder(placeHolderRes)
         .error(errorResId)
-        .into(this)
+        .into(this, object : Callback{
+            override fun onSuccess() {
+                pbImageLoader?.hideView()
+            }
+
+            override fun onError() {
+                pbImageLoader?.hideView()
+            }
+        })
 }
 
 @ExperimentalCoroutinesApi
