@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:divider="?android:attr/dividerHorizontal"
+    android:orientation="horizontal"
+    android:showDividers="middle">
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="@dimen/mobile_design_space_16dp">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etSearchInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_search_view_background"
+            android:gravity="center_horizontal"
+            android:hint="@string/search_for_images_here" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvImageList"
+            android:name="com.poc.ItemListFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/etSearchInput"
+            android:paddingTop="@dimen/mobile_design_space_16dp"
+            app:layoutManager="LinearLayoutManager"
+            tools:listitem="@layout/image_list_item_view" />
+
+        <ProgressBar
+            android:id="@+id/pbLoader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+        <include layout="@layout/error_view" />
+
+    </RelativeLayout>
+
+    <fragment
+        android:id="@+id/item_detail_container"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:defaultNavHost="false"
+        app:navGraph="@navigation/item_details_navigation" />
+
+
+</LinearLayout>
+
+
+
+

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ImageFinder</string>
+    <string name="title_item_detail">Item Detail</string>
+    <string name="add_comment">Add comment</string>
+    <string name="save_comment">Save comment</string>
+    <string name="try_again">Try Again</string>
+    <string name="search_for_images_here">Search for images here</string>
+</resources>
